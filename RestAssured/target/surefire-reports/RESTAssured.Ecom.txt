@@ -1,0 +1,18 @@
+-------------------------------------------------------------------------------
+Test set: RESTAssured.Ecom
+-------------------------------------------------------------------------------
+Tests run: 3, Failures: 2, Errors: 0, Skipped: 0, Time elapsed: 13.08 s <<< FAILURE! - in RESTAssured.Ecom
+RESTAssured.Ecom.signUp  Time elapsed: 6.44 s  <<< FAILURE!
+java.lang.AssertionError: 
+1 expectation failed.
+Expected status code <201> but was <400>.
+
+	at RESTAssured.Ecom.signUp(Ecom.java:38)
+
+RESTAssured.Ecom.getallusers  Time elapsed: 1.321 s  <<< FAILURE!
+java.lang.AssertionError: 
+1 expectation failed.
+Expected status code <200> but was <500>.
+
+	at RESTAssured.Ecom.getallusers(Ecom.java:94)
+
