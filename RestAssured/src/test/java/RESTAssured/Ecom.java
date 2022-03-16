@@ -90,7 +90,7 @@ public class Ecom {
 		.then()
 		.assertThat().statusCode(200).contentType(ContentType.JSON)
 		.extract().response();
-		//String jsonresponse = response.asString();
+		String jsonresponse = response.asString();
 		//i want to convert the response in to json format
 		//why do i use jsonpath to convert the string in to a json format
 		//JsonPath js = new JsonPath(jsonresponse);
@@ -122,6 +122,6 @@ public class Ecom {
 		JsonPath js = new JsonPath(jsonresponse);
 		token = js.get("accessToken");
 		System.out.println(token);
-		System.out.println("anything");
+		
 	}
 }
