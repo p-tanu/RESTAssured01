@@ -14,6 +14,7 @@ public class Ecom {
 	public static String baseURL= "https://ecommerceservice.herokuapp.com";
 	public static String message;
 	public static String token;
+	public static String id;
 	@Test(priority = 0, enabled = false)
 	public void signUp()
 	{
@@ -80,25 +81,21 @@ public class Ecom {
 	{
 	RestAssured.baseURI = baseURL;
 		
-		
-		
-	
-		Response response =given()
-		.sessionId("Authorization","Bearer"+token)
-		.header("Content-Type","application/json")
-		
-		
+	Response response =given()
+		.header("Authorization", "Bearer"+token)
+			
 		.when()
 		.get("/user")
 		
 		.then()
 		.assertThat().statusCode(200).contentType(ContentType.JSON)
 		.extract().response();
-		String jsonresponse = response.asString();
+		//String jsonresponse = response.asString();
 		//i want to convert the response in to json format
 		//why do i use jsonpath to convert the string in to a json format
-		JsonPath js = new JsonPath(jsonresponse);
-		System.out.println(js);
+		//JsonPath js = new JsonPath(jsonresponse);
+		//id = js.getString("user[12]._id")
+		//System.out.println(js);
 	}
 	@Test(priority = 1, enabled = false)
 	public void delete()
@@ -125,5 +122,6 @@ public class Ecom {
 		JsonPath js = new JsonPath(jsonresponse);
 		token = js.get("accessToken");
 		System.out.println(token);
+		System.out.println("anything");
 	}
 }
